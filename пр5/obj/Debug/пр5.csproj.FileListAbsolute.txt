@@ -1,0 +1,15 @@
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\пр5.exe.config
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\пр5.exe
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\пр5.pdb
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\EntityFramework.dll
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\EntityFramework.xml
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\artem\source\repos\пр5\пр5\obj\Debug\пр5.csproj.AssemblyReference.cache
+C:\Users\artem\source\repos\пр5\пр5\obj\Debug\пр5.csproj.CoreCompileInputs.cache
+C:\Users\artem\source\repos\пр5\пр5\obj\Debug\пр5.csproj.CopyComplete
+C:\Users\artem\source\repos\пр5\пр5\obj\Debug\пр5.exe
+C:\Users\artem\source\repos\пр5\пр5\obj\Debug\пр5.pdb
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\HashPassword.dll
+C:\Users\artem\source\repos\пр5\пр5\bin\Debug\HashPassword.pdb

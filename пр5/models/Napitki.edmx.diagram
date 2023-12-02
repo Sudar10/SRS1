@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1fa22cdbb430419dad3ae18b924ebaf1" Name="Diagram1">
+        <EntityTypeShape EntityType="NapitkiModel.Dolznosti" Width="1.5" PointX="5.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Klienti" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Nakladnaya" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.NakladnayaProdukt" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Postavshik" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Product" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Produkcia" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Sotrudnik" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Users" Width="1.5" PointX="10.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NapitkiModel.Zakazi" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="NapitkiModel.FK_Sotrudnik_Dolznosti" ManuallyRouted="false" />
+        <AssociationConnector Association="NapitkiModel.FK_Zakazi_Klienti" ManuallyRouted="false" />
+        <AssociationConnector Association="NapitkiModel.FK_Kolichestvo_Nakladnaya" ManuallyRouted="false" />
+        <AssociationConnector Association="NapitkiModel.FK_Nakladnaya_Postavsik" ManuallyRouted="false" />
+        <AssociationConnector Association="NapitkiModel.FK_Kolichestvo_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="NapitkiModel.FK_Product_Produkcia" ManuallyRouted="false" />
+        <AssociationConnector Association="NapitkiModel.FK_Zakazi_Produkcia" ManuallyRouted="false" />
+        <AssociationConnector Association="NapitkiModel.FK_Users_Sotrudnik" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

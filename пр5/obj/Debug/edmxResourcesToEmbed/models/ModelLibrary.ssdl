@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище NapitkiModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dolznosti">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dolznost" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Klienti">
+    <Key>
+      <PropertyRef Name="IDKlient" />
+    </Key>
+    <Property Name="IDKlient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Familia" Type="varchar(max)" Nullable="false" />
+    <Property Name="Otchestvo" Type="varchar(max)" />
+    <Property Name="PasportSeries" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="PasportNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Nakladnaya">
+    <Key>
+      <PropertyRef Name="IDNakladnoi" />
+    </Key>
+    <Property Name="IDNakladnoi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDPostavshika" Type="int" Nullable="false" />
+    <Property Name="IDSotrudnika" Type="int" Nullable="false" />
+    <Property Name="Data" Type="date" Nullable="false" />
+    <Property Name="Stoimost" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NakladnayaProdukt">
+    <Key>
+      <PropertyRef Name="IDNakladnoi" />
+      <PropertyRef Name="IDProdukta" />
+    </Key>
+    <Property Name="IDNakladnoi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDProdukta" Type="int" Nullable="false" />
+    <Property Name="Kolichestvo" Type="int" Nullable="false" />
+    <Property Name="Stoimost" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Postavshik">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nazvanie" Type="varchar(max)" Nullable="false" />
+    <Property Name="Producti" Type="varchar(max)" Nullable="false" />
+    <Property Name="Stoimost" Type="money" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="IDProdukta" />
+    </Key>
+    <Property Name="IDProdukta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naimenovanie" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produkcia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kolichestvo" Type="int" Nullable="false" />
+    <Property Name="Stoimost" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sotrudniki">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Familia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Otchestvo" Type="varchar" MaxLength="50" />
+    <Property Name="IDDolznost" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" Nullable="false" />
+    <Property Name="PasportSeries" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="PasportNumber" Type="nvarchar" MaxLength="6" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="varchar(max)" Nullable="false" />
+    <Property Name="Parol" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zakazi">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDKlient" Type="int" Nullable="false" />
+    <Property Name="Naimenovanie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kolichestvo" Type="int" Nullable="false" />
+    <Property Name="Stoimost" Type="money" Nullable="false" />
+    <Property Name="Oplata" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Kolichestvo_Nakladnaya">
+    <End Role="Nakladnaya" Type="Self.Nakladnaya" Multiplicity="1" />
+    <End Role="NakladnayaProdukt" Type="Self.NakladnayaProdukt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nakladnaya">
+        <PropertyRef Name="IDNakladnoi" />
+      </Principal>
+      <Dependent Role="NakladnayaProdukt">
+        <PropertyRef Name="IDNakladnoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kolichestvo_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="NakladnayaProdukt" Type="Self.NakladnayaProdukt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="IDProdukta" />
+      </Principal>
+      <Dependent Role="NakladnayaProdukt">
+        <PropertyRef Name="IDProdukta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Nakladnaya_Postavsik">
+    <End Role="Postavshik" Type="Self.Postavshik" Multiplicity="1" />
+    <End Role="Nakladnaya" Type="Self.Nakladnaya" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postavshik">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Nakladnaya">
+        <PropertyRef Name="IDPostavshika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Produkcia">
+    <End Role="Produkcia" Type="Self.Produkcia" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Produkcia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="IDProdukta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sotrudniki_Dolznosti">
+    <End Role="Dolznosti" Type="Self.Dolznosti" Multiplicity="1" />
+    <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dolznosti">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sotrudniki">
+        <PropertyRef Name="IDDolznost" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sotrudniki_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Sotrudniki" Type="Self.Sotrudniki" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sotrudniki">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zakazi_Klienti">
+    <End Role="Klienti" Type="Self.Klienti" Multiplicity="1" />
+    <End Role="Zakazi" Type="Self.Zakazi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klienti">
+        <PropertyRef Name="IDKlient" />
+      </Principal>
+      <Dependent Role="Zakazi">
+        <PropertyRef Name="IDKlient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Zakazi_Produkcia">
+    <End Role="Produkcia" Type="Self.Produkcia" Multiplicity="1" />
+    <End Role="Zakazi" Type="Self.Zakazi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produkcia">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Zakazi">
+        <PropertyRef Name="Kolichestvo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище NapitkiModelContainer">
+    <EntitySet Name="Dolznosti" EntityType="Self.Dolznosti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Klienti" EntityType="Self.Klienti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nakladnaya" EntityType="Self.Nakladnaya" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NakladnayaProdukt" EntityType="Self.NakladnayaProdukt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Postavshik" EntityType="Self.Postavshik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produkcia" EntityType="Self.Produkcia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sotrudniki" EntityType="Self.Sotrudniki" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zakazi" EntityType="Self.Zakazi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Kolichestvo_Nakladnaya" Association="Self.FK_Kolichestvo_Nakladnaya">
+      <End Role="Nakladnaya" EntitySet="Nakladnaya" />
+      <End Role="NakladnayaProdukt" EntitySet="NakladnayaProdukt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kolichestvo_Product" Association="Self.FK_Kolichestvo_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="NakladnayaProdukt" EntitySet="NakladnayaProdukt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Nakladnaya_Postavsik" Association="Self.FK_Nakladnaya_Postavsik">
+      <End Role="Postavshik" EntitySet="Postavshik" />
+      <End Role="Nakladnaya" EntitySet="Nakladnaya" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Produkcia" Association="Self.FK_Product_Produkcia">
+      <End Role="Produkcia" EntitySet="Produkcia" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sotrudniki_Dolznosti" Association="Self.FK_Sotrudniki_Dolznosti">
+      <End Role="Dolznosti" EntitySet="Dolznosti" />
+      <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sotrudniki_Users" Association="Self.FK_Sotrudniki_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Sotrudniki" EntitySet="Sotrudniki" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zakazi_Klienti" Association="Self.FK_Zakazi_Klienti">
+      <End Role="Klienti" EntitySet="Klienti" />
+      <End Role="Zakazi" EntitySet="Zakazi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Zakazi_Produkcia" Association="Self.FK_Zakazi_Produkcia">
+      <End Role="Produkcia" EntitySet="Produkcia" />
+      <End Role="Zakazi" EntitySet="Zakazi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

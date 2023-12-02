@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7769AD9E-3B20-4373-9652-4FC8AE8230E9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>пр5</RootNamespace>
+    <AssemblyName>пр5</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper.cs" />
+    <Compile Include="models\Dolznosti.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Klienti.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Nakladnaya.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\NakladnayaProdukt.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Napitki.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Napitki.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Napitki.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Napitki.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Napitki.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="models\Postavshik.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Product.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Produkcia.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Sotrudnik.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\sysdiagrams.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Users.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="models\Zakazi.cs">
+      <DependentUpon>Napitki.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="models\Napitki.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Napitki.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="models\Napitki.edmx.diagram">
+      <DependentUpon>Napitki.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HashPassword\HashPassword.csproj">
+      <Project>{a9026c30-ceff-4da5-a0cf-bcdfbd6e9802}</Project>
+      <Name>HashPassword</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="models\Napitki.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Napitki.edmx</DependentUpon>
+      <LastGenOutput>Napitki.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="models\Napitki.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Napitki.edmx</DependentUpon>
+      <LastGenOutput>Napitki.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

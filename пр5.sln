@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "пр5", "пр5\пр5.csproj", "{7769AD9E-3B20-4373-9652-4FC8AE8230E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashPassword", "HashPassword\HashPassword.csproj", "{A9026C30-CEFF-4DA5-A0CF-BCDFBD6E9802}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7769AD9E-3B20-4373-9652-4FC8AE8230E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7769AD9E-3B20-4373-9652-4FC8AE8230E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7769AD9E-3B20-4373-9652-4FC8AE8230E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7769AD9E-3B20-4373-9652-4FC8AE8230E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9026C30-CEFF-4DA5-A0CF-BCDFBD6E9802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9026C30-CEFF-4DA5-A0CF-BCDFBD6E9802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9026C30-CEFF-4DA5-A0CF-BCDFBD6E9802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9026C30-CEFF-4DA5-A0CF-BCDFBD6E9802}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AED2A76D-0303-463B-AB24-91499C4DD3DF}
+	EndGlobalSection
+EndGlobal
